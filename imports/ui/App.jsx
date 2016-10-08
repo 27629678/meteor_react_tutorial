@@ -22,9 +22,9 @@ export default class App extends Component {
     ));
     */
 
-    return this.props.tasks.map((task) => {
+    return this.props.tasks.map((task) => (
       <Task key={task._id} task={task} />
-    });
+    ));
   }
 
   render() {
