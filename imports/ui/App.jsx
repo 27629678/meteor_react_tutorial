@@ -26,12 +26,7 @@ export default class App extends Component {
       return;
     }
 
-    Tasks.insert({
-      text,
-      createdAt: new Date(), // current time
-      owner: Meteor.userId(), // id of loged in user
-      username: Meteor.user().username,  // username of logged in user
-    });
+    Meteor.call('tasks.insert', text);
 
     // Clear form
     ReactDOM.findDOMNode(this.refs.textInput).value = '';
